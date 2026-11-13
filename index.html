@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Segurança Digital | Web Inclusiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra Superior de Acessibilidade -->
+    <div class="barra-acessibilidade" role="region" aria-label="Ferramentas de Acessibilidade">
+        <div class="container acessibilidade-controles">
+            <span class="acessibilidade-titulo">♿ Acessibilidade:</span>
+            <div class="grupo-botoes">
+                <button id="btn-diminuir" type="button" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button id="btn-resetar" type="button" aria-label="Restaurar tamanho padrão da fonte">A</button>
+                <button id="btn-aumentar" type="button" aria-label="Aumentar tamanho da fonte">A+</button>
+                <button id="btn-contraste" type="button" aria-pressed="false">🌓 Alto Contraste</button>
+                <button id="btn-ler-pagina" type="button">🔊 Ouvir Página</button>
+                <button id="btn-parar-leitura" type="button" class="btn-oculto">⏹️ Parar Áudio</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container">
+            <span class="selo">Direitos Digitais & Inclusão</span>
+            <h1>Guia de Segurança Digital</h1>
+            <p class="subtitulo">Proteja seus dados, conheça seus direitos na internet e navegue com autonomia e acessibilidade.</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo-principal" class="container principal">
+
+        <!-- Filtro de Categorias -->
+        <section class="secao-filtros" aria-label="Filtrar tópicos de segurança">
+            <h2>Explore os Temas</h2>
+            <div class="filtros">
+                <button class="filtro-btn ativo" data-categoria="todos">Todos os Tópicos</button>
+                <button class="filtro-btn" data-categoria="privacidade">Privacidade & LGPD</button>
+                <button class="filtro-btn" data-categoria="golpes">Prevenção de Golpes</button>
+                <button class="filtro-btn" data-categoria="senhas">Senhas & Contas</button>
+            </div>
+        </section>
+
+        <!-- Container onde o JavaScript vai renderizar os cartões (Nuvem de Dados) -->
+        <section id="lista-dicas" class="grade-dicas" aria-live="polite">
+            <!-- Os cartões são gerados dinamicamente via script.js -->
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+            <p>Desenvolvido por <strong>Kauê Ricardo da Silva Barbosa</strong></p>
+            <p class="rodape-detalhe">Projeto de Acessibilidade Web e Segurança Digital — HTML5, CSS3 & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+/* ==========================================================================
+   ESTILIZAÇÃO E ACESSIBILIDADE WEB (Alto Contraste & Fontes Dinâmicas)
+   ========================================================================== */
+
+:root {
+    --cor-fundo: #f1f5f9;
+    --cor-superficie: #ffffff;
+    --cor-primaria: #0f172a;
+    --cor-destaque: #0284c7;
+    --cor-destaque-hover: #0369a1;
+    --cor-texto: #1e293b;
+    --cor-texto-suave: #475569;
+    --cor-borda: #cbd5e1;
+    --tamanho-base: 16px;
+}
+
+/* Tema de Alto Contraste para Baixa Visão */
+body.alto-contraste {
+    --cor-fundo: #000000;
+    --cor-superficie: #111111;
+    --cor-primaria: #000000;
+    --cor-destaque: #ffff00;
+    --cor-destaque-hover: #e6e600;
+    --cor-texto: #ffffff;
+    --cor-texto-suave: #facc15;
+    --cor-borda: #ffff00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--tamanho-base);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Barra de Acessibilidade
+   -------------------------------------------------------------------------- */
+.barra-acessibilidade {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--cor-destaque);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body.alto-contraste .barra-acessibilidade {
+    background-color: #000000;
+    border-bottom: 2px solid #ffff00;
+}
+
+.acessibilidade-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.acessibilidade-titulo {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.grupo-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.grupo-botoes button {
+    background-color: #334155;
+    color: #ffffff;
+    border: 1px solid #64748b;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.grupo-botoes button:hover,
+.grupo-botoes button:focus {
+    background-color: var(--cor-destaque);
+    color: #000000;
+    outline: 3px solid #38bdf8;
+}
+
+body.alto-contraste .grupo-botoes button {
+    background-color: #000000;
+    color: #ffff00;
+    border: 2px solid #ffff00;
+}
+
+body.alto-contraste .grupo-botoes button:hover,
+body.alto-contraste .grupo-botoes button:focus {
+    background-color: #ffff00;
+    color: #000000;
+}
+
+.btn-oculto {
+    display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Cabeçalho
+   -------------------------------------------------------------------------- */
+.cabecalho {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 4px solid var(--cor-destaque);
+}
+
+body.alto-contraste .cabecalho {
+    background: #000000;
+    color: #ffff00;
+    border-bottom: 3px solid #ffff00;
+}
+
+.selo {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.cabecalho h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    max-width: 680px;
+    margin: 0 auto;
+    opacity: 0.92;
+}
+
+/* --------------------------------------------------------------------------
+   Filtros e Cartões Dinâmicos
+   -------------------------------------------------------------------------- */
+.principal {
+    flex: 1;
+    padding: 40px 0;
+}
+
+.secao-filtros {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.secao-filtros h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filtro-btn {
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-borda);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filtro-btn.ativo,
+.filtro-btn:hover {
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    border-color: var(--cor-destaque);
+}
+
+body.alto-contraste .filtro-btn.ativo,
+body.alto-contraste .filtro-btn:hover {
+    background-color: #ffff00;
+    color: #000000;
+}
+
+.grade-dicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+}
+
+.cartao-dica {
+    background-color: var(--cor-superficie);
+    border: 2px solid var(--cor-borda);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+}
+
+.cartao-dica:hover {
+    transform: translateY(-4px);
+}
+
+.cartao-categoria {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--cor-destaque);
+    margin-bottom: 8px;
+}
+
+.cartao-dica h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.cartao-dica p {
+    font-size: 0.98rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 20px;
+}
+
+.btn-ouvir-card {
+    align-self: flex-start;
+    background-color: transparent;
+    color: var(--cor-destaque);
+    border: 2px solid var(--cor-destaque);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-ouvir-card:hover {
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+}
+
+body.alto-contraste .btn-ouvir-card:hover {
+    background-color: #ffff00;
+    color: #000000;
+}
+
+/* --------------------------------------------------------------------------
+   Rodapé
+   -------------------------------------------------------------------------- */
+.rodape {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    text-align: center;
+    padding: 28px 0;
+    margin-top: auto;
+    border-top: 3px solid var(--cor-destaque);
+}
+
+body.alto-contraste .rodape {
+    color: #ffff00;
+}
+
+.rodape-detalhe {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 6px;
+}
